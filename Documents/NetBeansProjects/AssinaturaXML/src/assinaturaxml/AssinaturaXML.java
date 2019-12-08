@@ -49,11 +49,11 @@ public class AssinaturaXML {
         final String nomePrivateKey = "mykey";
         final String senhaPrivateKey = "changeit";
         final String localDocumentoAssinado = "src/arquivos/signedPurchaseOrder.xml";
-        final Writer xmlAssinado = new FileWriter("src/arquivos/signedPurchaseOrder.xml");  
+        final Writer xmlAssinado = new FileWriter(localDocumentoAssinado);  
         
         AssinaturaXML sign = new AssinaturaXML();
-        sign.assinar(localDocumento, localKeystore, senhaKeystore, nomePrivateKey, senhaPrivateKey, localDocumentoAssinado);
-        //sign.assinarTag(localDocumento, localKeystore, senhaKeystore, nomePrivateKey, senhaPrivateKey, localDocumentoAssinado, xmlAssinado, "Buyer");
+        //sign.assinar(localDocumento, localKeystore, senhaKeystore, nomePrivateKey, senhaPrivateKey, localDocumentoAssinado);
+        sign.assinarTag(localDocumento, localKeystore, senhaKeystore, nomePrivateKey, senhaPrivateKey, xmlAssinado, "Buyer");
     }
     
     public void assinar(String localDocumento, String localKeystore, String senhaKeystore, 
@@ -116,8 +116,7 @@ public class AssinaturaXML {
     
     
     public void assinarTag(String localDocumento, String localKeystore, String senhaKeystore, 
-        String nomePrivateKey, String senhaPrivateKey, String localDocumentoAssinado, 
-        Writer xmlAssinado, String... tag) throws Exception {
+        String nomePrivateKey, String senhaPrivateKey, Writer xmlAssinado, String... tag) throws Exception {
         
         // Instancia o documento.
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
