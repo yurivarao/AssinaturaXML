@@ -1,0 +1,23 @@
+NodeList node = documento.getElementsByTagName("Buyer");
+        
+        String dados;
+        for(int i = 0; i <= node.getLength(); i++){
+            Element elementos = (Element) node.item(i);
+            dados = elementos.toString();
+            System.out.println(dados);
+            }
+        }
+    
+        Reference referenciaTag = fabrica.newReference("", fabrica.newDigestMethod(DigestMethod.SHA256, null),
+            Collections.singletonList(fabrica.newTransform(Transform.ENVELOPED, 
+           (TransformParameterSpec) null)), null, null);
+        
+        
+        
+        if (node.getLength() == 0) {   
+            System.out.println("ERRO: TAG não Encontrada!");
+        } else {
+            elemento = node.toString();
+            System.out.println("TAG Encontrada!");
+            System.out.println("Elemento: " + elemento);
+        }

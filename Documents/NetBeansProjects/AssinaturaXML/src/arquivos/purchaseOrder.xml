@@ -5,7 +5,7 @@
         <Description>Video Game</Description>
         <Price>10.29</Price>
     </Item>
-    <Buyer id="8492340">
+    <Buyer Id = "8492340">
         <Name>My Name</Name>
         <Address>
             <Street>One Network Drive</Street>
